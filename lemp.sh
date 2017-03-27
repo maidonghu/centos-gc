@@ -36,4 +36,4 @@ sudo cp -rp wordpress/* html/
 sudo chmod 777 html html/wp-content
 
 sudo tuned-adm profile throughput-performance
-sudo wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/maidonghu/centos-ln/master/nginx.conf
+sudo wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/maidonghu/centos-gc/master/nginx.conf
