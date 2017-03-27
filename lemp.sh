@@ -37,3 +37,4 @@ sudo chmod 777 html html/wp-content
 
 sudo tuned-adm profile throughput-performance
 sudo wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/maidonghu/centos-gc/master/nginx.conf
+sudo wget -O /etc/nginx/conf.d/http.conf https://raw.githubusercontent.com/maidonghu/centos-ln/master/http.conf
