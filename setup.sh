@@ -14,4 +14,4 @@ sudo systemctl start sendmail
 
 echo 'Please logoff and login again with SSH with mike!' 
 sleep 5
-reboot
+sudo reboot
