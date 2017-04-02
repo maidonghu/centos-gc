@@ -20,7 +20,8 @@ sudo rm -f mysql_secure_installation.sql
 sudo systemctl restart mariadb
 
 sudo yum install epel-release -y
-sudo yum install -y redis
+sudo yum install -y jemalloc
+sudo rpm -ivh http://cbs.centos.org/kojifiles/packages/redis/3.2.8/1.el7/x86_64/redis-3.2.8-1.el7.x86_64.rpm
 sudo systemctl enable redis
 sudo mv /redis.conf /etc/
 sudo systemctl restart redis
