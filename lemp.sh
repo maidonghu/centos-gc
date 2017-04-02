@@ -4,7 +4,7 @@ sudo setenforce 0
 sudo yum install  mariadb-server -y
 sudo systemctl enable mariadb
 sudo systemctl start mariadb
-sudo mv /root/mysql_secure_installation.sql ./
+sudo mv /mysql_secure_installation.sql ./
 sudo mysql -sfu root < "mysql_secure_installation.sql"
 sudo rm -f mysql_secure_installation.sql
 sudo wget -O /etc/my.cnf.d/server.cnf https://raw.githubusercontent.com/maidonghu/centos-gc/master/server.cnf
@@ -13,14 +13,14 @@ sudo systemctl restart mariadb
 sudo yum install epel-release -y
 sudo yum install -y redis
 sudo systemctl enable redis
-sudo mv /root/redis.conf /etc/
+sudo mv /redis.conf /etc/
 sudo systemctl restart redis
 
 wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 sudo rpm -ivh remi-release-7.rpm
 sudo yum --enablerepo=remi,remi-php71 install php php-mysqlnd php-gd php-xml php-redis php-xmlrpc php-mbstring php-mcrypt php-fpm php-opcache php-apcu -y
 sudo systemctl enable php-fpm
-sudo mv /root/www.conf /etc/php-fpm.d/
+sudo mv /www.conf /etc/php-fpm.d/
 sudo systemctl restart php-fpm
 
 sudo touch /etc/yum.repos.d/nginx.repo
@@ -49,10 +49,10 @@ sudo wget -O /etc/nginx/conf.d/http.conf https://raw.githubusercontent.com/maido
 cd /var/www/html/wp-content/plugins/
 sudo wget https://downloads.wordpress.org/plugin/updraftplus.1.12.35.zip
 sudo unzip updraftplus.1.12.35.zip
-sudo mv /root/wp-config.php /var/www/html/
+sudo mv /wp-config.php /var/www/html/
 sudo mkdir -p /etc/nginx/ssl/linode.mikecloud.info
-sudo mv /root/fullchain1.pem /etc/nginx/ssl/linode.mikecloud.info/
-sudo mv /root/privkey1.pem /etc/nginx/ssl/linode.mikecloud.info/
+sudo mv /fullchain1.pem /etc/nginx/ssl/linode.mikecloud.info/
+sudo mv /privkey1.pem /etc/nginx/ssl/linode.mikecloud.info/
 
 sudo chown -R apache:apache /var/www/html/wp-content
 sudo systemctl restart nginx
