@@ -12,6 +12,9 @@ sudo yum install sendmail -y
 sudo systemctl enable sendmail
 sudo systemctl start sendmail
 
+echo never > /sys/kernel/mm/transparent_hugepage/enabled
+echo 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' | tee -a /etc/rc.local
+
 echo 'Please logoff and login again with SSH with mike!' 
 sleep 5
 sudo reboot
