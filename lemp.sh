@@ -20,10 +20,12 @@ sudo wget -O /etc/my.cnf.d/server.cnf https://raw.githubusercontent.com/maidongh
 sudo systemctl restart mariadb
 
 sudo yum install epel-release -y
-sudo yum install -y jemalloc
-sudo rpm -ivh http://cbs.centos.org/kojifiles/packages/redis/3.2.8/1.el7/x86_64/redis-3.2.8-1.el7.x86_64.rpm
-sudo systemctl enable redis
+sudo yum install -y redis
+sudo mkdir -p /var/run/redis
 sudo mv /redis.conf /etc/
+sudo systemctl enable redis
+echo 'vm.overcommit_memory = 1' | sudo tee -a /etc/sysctl.conf
+sysctl vm.overcommit_memory=1
 sudo systemctl restart redis
 
 wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
