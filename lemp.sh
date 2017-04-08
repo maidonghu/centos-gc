@@ -59,8 +59,8 @@ sudo wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/maidonghu/c
 sudo wget -O /etc/nginx/conf.d/http.conf https://raw.githubusercontent.com/maidonghu/centos-gc/master/http.conf
 
 cd /var/www/html/wp-content/plugins/
-sudo wget https://downloads.wordpress.org/plugin/updraftplus.1.12.35.zip
-sudo unzip updraftplus.1.12.35.zip
+sudo wget https://downloads.wordpress.org/plugin/updraftplus.1.12.40.zip
+sudo unzip updraftplus.1.12.40.zip
 sudo mv /wp-config.php /var/www/html/
 sudo mkdir -p /etc/nginx/ssl/blog.mikecloud.info
 sudo mv /fullchain1.pem /etc/nginx/ssl/blog.mikecloud.info/
